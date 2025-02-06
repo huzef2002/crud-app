@@ -15,9 +15,9 @@ function Read() {
 
   function handelLocal(id,Name,Age,Email){
     localStorage.setItem('id',id);
-    localStorage.setItem('Name',Name);
-    localStorage.setItem('Age',Age);
-    localStorage.setItem('Email',Email);
+    localStorage.setItem('name',Name);
+    localStorage.setItem('age',Age);
+    localStorage.setItem('email',Email);
   }
 
   function handeldlt(id) {
@@ -56,14 +56,14 @@ function Read() {
           <tbody>
             {apiData.map((item) => {
               return (
-                <tr>
+                <tr key={item.id}>
                   <td>{item.id}   </td>
-                  <td>{item.Name} {item.name}</td>
-                  <td>{item.Age}  {item.age}</td>
-                  <td>{item.Email} {item.email}</td>
+                  <td>{item.Name} </td>
+                  <td>{item.Age}  </td>
+                  <td>{item.Email} </td>
                   <td>
                     <Link to='/edit'>
-                      <button className='btn btn-primary' onChange={()=>handelLocal(item.id,item.Name,item.Age, item.Email)}> Edit</button>
+                      <button className='btn btn-primary' onClick={()=>handelLocal(item.id,item.Name,item.Age, item.Email)}> Edit</button>
                     </Link>
                   </td>
                   <td>

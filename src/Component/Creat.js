@@ -23,6 +23,7 @@ function Creat() {
             })
             .catch((error) => {
                 console.log(error);
+                alert('Error 404');
             })
     }
     return (
